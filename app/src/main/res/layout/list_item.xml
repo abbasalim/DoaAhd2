@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_rl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+   >
+
+    <TextView
+        android:id="@+id/itm_arabi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/itm_img"
+        android:gravity="right"
+        android:text="درباره"
+        android:paddingRight="5dp"
+        android:textColor="#ffff"
+        android:textAppearance="?android:textAppearanceMedium" />
+
+    <ImageView
+        android:id="@+id/itm_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:paddingRight="5.0dip"
+        android:src="@drawable/mk_ico_font" />
+
+</RelativeLayout>

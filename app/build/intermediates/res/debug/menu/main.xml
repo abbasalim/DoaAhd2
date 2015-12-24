@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="ir.esfandune.doaahd.MainActivity" >
+
+   <!-- <item
+        android:id="@+id/action_play"
+        android:title="پخش"
+        app:showAsAction="withText|always"/>-->
+    
+
+</menu>
+<!-- From: file:/C:/Users/ArMo%20at%20372/Documents/my%20project1/SanjAghak/work/DoaAhd1/app/src/main/res/menu/main.xml -->

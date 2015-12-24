@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ir.esfandune.doaahd"
+    android:versionCode="6"
+    android:versionName="3.7.18 Ya Hosyn" >
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        />
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icn_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppBaseTheme" >
+
+        <activity
+            android:name=".Splash"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Transparent" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Act_Main"
+            android:label="@string/app_name" >
+        </activity>
+    </application>
+
+</manifest>

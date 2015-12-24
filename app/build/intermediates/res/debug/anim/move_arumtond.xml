@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_interpolator">
+    <translate android:fromYDelta="100%" android:toYDelta="0%"
+        android:fromXDelta="0" android:toXDelta="0%"
+        android:duration="300"/>
+    <alpha
+        android:fromAlpha="0"
+        android:toAlpha="100"
+        android:duration="300"
+
+        />
+
+</set>
+<!-- From: file:/C:/Users/ArMo%20at%20372/Documents/my%20project1/SanjAghak/work/DoaAhd1/app/src/main/res/anim/move_arumtond.xml -->

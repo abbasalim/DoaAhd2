@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="7dp"
+    >
+
+</LinearLayout><!-- From: file:/C:/Users/ArMo%20at%20372/Documents/my%20project1/SanjAghak/work/DoaAhd1/app/src/main/res/layout/lst_hdr_ftr.xml -->

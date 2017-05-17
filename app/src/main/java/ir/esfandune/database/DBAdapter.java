@@ -1,9 +1,6 @@
 package ir.esfandune.database;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -12,20 +9,23 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBAdapter {
 
 
-    static final String CREATE_MAINTABLE = "create table main(id INTEGER PRIMARY KEY  NOT NULL, arabi text ,farsi text ,extera text);";
     public static final String DATABASE_MAINTABLE = "main";
     public static final String DATABASE_NAME = "db_doaahd";
-    static final int DATABASE_VERSION = 2;
     public static final String KEY_ARABI = "arabi";
     public static final String KEY_EZAFI = "extera";
     public static final String KEY_FARSI = "farsi";
     public static final String KEY_ROWID = "id";
     public static final String TAG = "DBAdapter";
-    DatabaseHelper DBHelper;
+    static final String CREATE_MAINTABLE = "create table main(id INTEGER PRIMARY KEY  NOT NULL, arabi text ,farsi text ,extera text);";
+    static final int DATABASE_VERSION = 5;
     final Context context;
+    DatabaseHelper DBHelper;
     SQLiteDatabase db;
     String yek_nam[] = {
             KEY_ROWID, KEY_ARABI, KEY_FARSI, KEY_EZAFI
@@ -39,35 +39,6 @@ public class DBAdapter {
     {
         this.context = ctx;
         DBHelper = new DatabaseHelper(context);
-    }
-
-    private static class DatabaseHelper extends SQLiteOpenHelper
-    {
-        DatabaseHelper(Context context)
-        {
-            super(context, DATABASE_NAME, null, DATABASE_VERSION);
-        }
-
-        @Override
-        public void onCreate(SQLiteDatabase db)
-        {
-            try {
-                db.execSQL(CREATE_MAINTABLE);
-
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        @Override
-        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion)
-        {
-            Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
-                    + newVersion + ", which will destroy all old data");
-
-            db.execSQL("DROP TABLE IF EXISTS "+DATABASE_MAINTABLE);
-            onCreate(db);
-        }
     }
 
     //---opens the database---
@@ -96,9 +67,6 @@ public class DBAdapter {
         return db.insert(DATABASE_MAINTABLE, null, initialValues);
     }
 
-
-
-
     //---retrieves all the contacts---
     public  List<Doa> getAllItem()
     {
@@ -108,7 +76,6 @@ public class DBAdapter {
         cursor.close();
         return nams;
     }
-    /////////////////////
 
     /////////////
     private List<Doa> cursorToList_Doa(Cursor cursor) {
@@ -129,6 +96,32 @@ public class DBAdapter {
         }
         cursor.close();
         return nams;
+    }
+    /////////////////////
+
+    private static class DatabaseHelper extends SQLiteOpenHelper {
+        DatabaseHelper(Context context) {
+            super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        }
+
+        @Override
+        public void onCreate(SQLiteDatabase db) {
+            try {
+                db.execSQL(CREATE_MAINTABLE);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        @Override
+        public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+            Log.w(TAG, "Upgrading database from version " + oldVersion + " to "
+                    + newVersion + ", which will destroy all old data");
+
+            db.execSQL("DROP TABLE IF EXISTS " + DATABASE_MAINTABLE);
+            onCreate(db);
+        }
     }
 
 

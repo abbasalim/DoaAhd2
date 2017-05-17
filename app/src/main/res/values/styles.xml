@@ -10,6 +10,12 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
+    <style name="AppBaseTheme_night" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorprimary_night</item>
+        <item name="colorPrimaryDark">@color/colorprimarydark_night</item>
+        <item name="colorAccent">@color/accent_night</item>
+    </style>
+
 
     
     

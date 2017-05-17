@@ -1,7 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools" tools:context="ir.esfandune.doaahd.Act_Main">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
-</menu>
-<!-- From: file:/C:/Users/ArMo%20at%20372/Documents/my%20project1/SanjAghak/work/DoaAhd1/app/src/main/res/menu/menu_act__main.xml -->

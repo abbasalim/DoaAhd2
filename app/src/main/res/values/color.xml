@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorprimary">#36e7af</color>
-    <color name="colorprimarydark">#2bb98c</color>
-    <color name="accent">#2196f3</color>
-    <color name="accent_d">#1976d2</color>
+
+    <color name="colorprimary">#0abcae</color>
+    <color name="colorprimarydark">#138787</color>
+    <color name="accent">#b44a41</color>
+    <color name="accent_d">#b44a41</color>
+    <color name="bg_d">#ede0df</color>
+    <color name="itm_d">#f9f6f6</color>
+
+
+    <color name="colorprimary_night">#2c424e</color>
+    <color name="colorprimarydark_night">#273238</color>
+    <color name="accent_night">#5ba2da</color>
+    <color name="accent_dnight">#1976d2</color>
+    <color name="bg_n">#5f7a8b</color>
+    <color name="itm_n">#2b2e30</color>
 </resources>
+
+

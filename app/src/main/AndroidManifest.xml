@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ir.esfandune.doaahd"
-    android:versionCode="6"
-    android:versionName="3.7.18 Ya Hosyn" >
+    android:versionCode="9"
+    android:versionName="4.0.120296 Shabaniye">
     <uses-permission
         android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         />

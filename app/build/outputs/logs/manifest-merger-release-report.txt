@@ -1,79 +1,102 @@
 -- Merging decision tree log ---
 manifest
-ADDED from AndroidManifest.xml:2:1
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:2:1-39:12
 	package
-		ADDED from AndroidManifest.xml:3:5
-		INJECTED from AndroidManifest.xml:0:0
-		INJECTED from AndroidManifest.xml:0:0
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:3:5-34
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from AndroidManifest.xml:5:5
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:5:5-47
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
 	android:versionCode
-		ADDED from AndroidManifest.xml:4:5
-		INJECTED from AndroidManifest.xml:0:0
-		INJECTED from AndroidManifest.xml:0:0
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from AndroidManifest.xml:2:11
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from AndroidManifest.xml:6:5
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:6:5-8:11
 	android:name
-		ADDED from AndroidManifest.xml:7:9
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:7:9-65
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from AndroidManifest.xml:9:5
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:9:5-75
 	android:name
-		ADDED from AndroidManifest.xml:9:22
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:9:22-72
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from AndroidManifest.xml:10:5
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:10:5-12:11
 	android:name
-		ADDED from AndroidManifest.xml:11:9
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:11:9-64
 uses-sdk
-ADDED from AndroidManifest.xml:13:5
-MERGED from com.android.support:appcompat-v7:22.2.0:20:5
-MERGED from com.android.support:support-v4:22.2.0:20:5
-MERGED from com.android.support:support-v4:22.2.0:20:5
-MERGED from DoaAhd1:FABlibrary:unspecified:8:5
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:13:5-15:41
+MERGED from [com.android.support:design:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\8c305bbd8970f36646b7d24f216962ac6b18b2d1\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\9fbf6dfd1800907d458ca3002f31a48d392af48c\output\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\643d108626431e81d5c610661584cd417d4f6611\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\56721ab331619aff3b2bbed49d77f76db53d2245\output\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:cardview-v7:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\529faedab32908d21da77ee7eae89b41a4ad1a5f\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\dfacad3b721ce0408ec9fd072a0ce280bd9a3e2e\output\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v13:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\c53d4fa9a63f89cf83476523e14f60cd50958fa7\output\AndroidManifest.xml:21:5-23:55
+MERGED from [com.android.support:support-v4:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\5eec7554ed49d8c76ef2254a8f2be9316f8ece64\output\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\a7ea5cad126ee816f25a549d297c3e0a80e472a8\output\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\2c96c723e0462dcc897e6cc5e3bf0c3e4d33d44b\output\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\55ca6f58cfa129f04eca1375db0aa90bea678d02\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\ee3b9c9ca789f7419f06b2c2017a63bb15f09fcd\output\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\839ca5033e097c267f49f29872ddc908d576fb26\output\AndroidManifest.xml:21:5-23:58
+MERGED from [DoaAhd1:FABlibrary:unspecified] C:\Android\work\DoaAhd1\FABlibrary\build\intermediates\bundles\default\AndroidManifest.xml:8:5-10:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\9fbf6dfd1800907d458ca3002f31a48d392af48c\output\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		ADDED from AndroidManifest.xml:15:9
-		INJECTED from AndroidManifest.xml:0:0
-		INJECTED from AndroidManifest.xml:0:0
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:15:9-38
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from AndroidManifest.xml:14:9
-		INJECTED from AndroidManifest.xml:0:0
-		INJECTED from AndroidManifest.xml:0:0
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:14:9-35
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml
 application
-ADDED from AndroidManifest.xml:17:5
-MERGED from com.android.support:appcompat-v7:22.2.0:22:5
-MERGED from com.android.support:support-v4:22.2.0:22:5
-MERGED from com.android.support:support-v4:22.2.0:22:5
-MERGED from DoaAhd1:FABlibrary:unspecified:12:5
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:17:5-37:19
+MERGED from [com.android.support:design:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\8c305bbd8970f36646b7d24f216962ac6b18b2d1\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\9fbf6dfd1800907d458ca3002f31a48d392af48c\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\643d108626431e81d5c610661584cd417d4f6611\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\56721ab331619aff3b2bbed49d77f76db53d2245\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:cardview-v7:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\529faedab32908d21da77ee7eae89b41a4ad1a5f\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v13:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\c53d4fa9a63f89cf83476523e14f60cd50958fa7\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\5eec7554ed49d8c76ef2254a8f2be9316f8ece64\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\a7ea5cad126ee816f25a549d297c3e0a80e472a8\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\2c96c723e0462dcc897e6cc5e3bf0c3e4d33d44b\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\55ca6f58cfa129f04eca1375db0aa90bea678d02\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\ee3b9c9ca789f7419f06b2c2017a63bb15f09fcd\output\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.1] C:\Users\ArMo_at_372\.android\build-cache\839ca5033e097c267f49f29872ddc908d576fb26\output\AndroidManifest.xml:25:5-20
+MERGED from [DoaAhd1:FABlibrary:unspecified] C:\Android\work\DoaAhd1\FABlibrary\build\intermediates\bundles\default\AndroidManifest.xml:12:5-20
 	android:label
-		ADDED from AndroidManifest.xml:20:9
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:20:9-41
 	android:allowBackup
-		ADDED from AndroidManifest.xml:18:9
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:18:9-35
 	android:icon
-		ADDED from AndroidManifest.xml:19:9
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:19:9-46
 	android:theme
-		ADDED from AndroidManifest.xml:21:9
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:21:9-44
 activity#ir.esfandune.doaahd.Splash
-ADDED from AndroidManifest.xml:23:9
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:23:9-32:20
 	android:label
-		ADDED from AndroidManifest.xml:25:13
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:25:13-45
 	android:theme
-		ADDED from AndroidManifest.xml:26:13
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:26:13-53
 	android:name
-		ADDED from AndroidManifest.xml:24:13
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:24:13-35
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:27:13
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:27:13-31:29
 action#android.intent.action.MAIN
-ADDED from AndroidManifest.xml:28:17
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from AndroidManifest.xml:28:25
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from AndroidManifest.xml:30:17
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:30:17-77
 	android:name
-		ADDED from AndroidManifest.xml:30:27
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:30:27-74
 activity#ir.esfandune.doaahd.Act_Main
-ADDED from AndroidManifest.xml:33:9
+ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:33:9-36:20
 	android:label
-		ADDED from AndroidManifest.xml:35:13
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:35:13-45
 	android:name
-		ADDED from AndroidManifest.xml:34:13
+		ADDED from C:\Android\work\DoaAhd1\app\src\main\AndroidManifest.xml:34:13-37

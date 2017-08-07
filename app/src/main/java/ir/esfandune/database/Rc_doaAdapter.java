@@ -52,7 +52,6 @@ public class Rc_doaAdapter extends RecyclerView.Adapter<Rc_doaAdapter.ViewHolder
         if (Act_Main.PlayingItemPost == position) {
             holder.itm_arabi.setTextColor(getAccent());
         } else {
-            holder.itm_img.clearAnimation();
             holder.itm_arabi.setTextColor(isDay ? Color.BLACK : Color.WHITE);
         }
     }

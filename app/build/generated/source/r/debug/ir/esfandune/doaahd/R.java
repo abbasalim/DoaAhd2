@@ -3306,7 +3306,7 @@ containing a value of this type.
         public static final int mk_ftr_plus=0x7f0b0099;
         public static final int mk_ftr_txt=0x7f0b0098;
         public static final int multiply=0x7f0b001c;
-        public static final int musicPrgbar=0x7f0b008e;
+        public static final int musicPrgbar=0x7f0b008d;
         public static final int navigation_header_container=0x7f0b007f;
         public static final int never=0x7f0b003c;
         public static final int none=0x7f0b0011;
@@ -3368,7 +3368,7 @@ containing a value of this type.
         public static final int toolbarTitle=0x7f0b008a;
         public static final int top=0x7f0b002c;
         public static final int topPanel=0x7f0b004d;
-        public static final int totalTime=0x7f0b008d;
+        public static final int totalTime=0x7f0b008e;
         public static final int touch_outside=0x7f0b007b;
         public static final int up=0x7f0b000a;
         public static final int useLogo=0x7f0b0015;

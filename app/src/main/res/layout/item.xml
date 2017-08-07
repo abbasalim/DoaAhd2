@@ -4,7 +4,7 @@
     android:id="@+id/card"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:alpha="0.7"
+    android:alpha="0.8"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout

@@ -140,8 +140,8 @@ public class Act_Main extends AppCompatActivity {
                 PerPlayingItmPost = PlayingItemPost;//چون هر 500 ثانیه بروز مشه این دوتا ممکنه یکی هم بشه
                 PlayingItemPost = a;
                 ((LinearLayoutManager) main_ls.getLayoutManager()).scrollToPositionWithOffset(a, 20);
-                main_ls.getAdapter().notifyItemChanged(PerPlayingItmPost);
-                main_ls.getAdapter().notifyItemChanged(PlayingItemPost);
+//                main_ls.getAdapter().notifyItemChanged(PerPlayingItmPost);
+//                main_ls.getAdapter().notifyItemChanged(PlayingItemPost);
 
             }
 //                }

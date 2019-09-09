@@ -9,7 +9,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.AssetFileDescriptor;
 import android.content.res.AssetManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -44,7 +43,7 @@ import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
 
-import java.io.FileNotFoundException;
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,8 +65,8 @@ import ir.esfandune.database.Rc_doaAdapter;
 
 public class Act_Main extends AppCompatActivity {
     public static int PlayingItemPost, PerPlayingItmPost;
-    static MediaPlayer mp;
-    static RecyclerView main_ls;
+    public MediaPlayer mp;
+    RecyclerView main_ls;
     static int val = 0;
     static Timer t;
     static TimerTask task;
@@ -97,11 +96,11 @@ public class Act_Main extends AppCompatActivity {
             //  long totalDuration = mp.getDuration();
             if (mp.isPlaying())
                 gotoLine();
-            mHandler.postDelayed(this, 1000);
+            mHandler.postDelayed(this, 250);
         }
     };
 
-    public static String miliSecondFormat(int millis) {
+    public  String miliSecondFormat(int millis) {
         if (TimeUnit.MILLISECONDS.toHours(millis) > 1)
             return String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millis),
                     TimeUnit.MILLISECONDS.toMinutes(millis) % TimeUnit.HOURS.toMinutes(1),
@@ -123,25 +122,27 @@ public class Act_Main extends AppCompatActivity {
             input.close();
             String text = new String(buffer);
             //در هر دفعه مگرده ببینه ثانیه الان صوت درحال پخش با کدوم عدد در تکست فایله برابری مکنه اسکرول مکنه به اونجا
-            String nowPlayingTime = utils.milliSecondsToTimer(currentDuration).toString();
+            String nowPlayingTime = utils.milliSecondsToTimer(currentDuration);
             Pattern regex = Pattern.compile("(?s)<" + nowPlayingTime + ">\\s(.*)</" + nowPlayingTime + ">");
             Matcher regexMatcher = regex.matcher(text);
             //اگر جایی که هستیم ثانیه اش با هیچ یک از موقعیت های متن برابر نیست به وسیله کد زیر میگرده تا ایتم قبلیش رو پیدا کنه و اسکرول به اونجا بشه
             while (!regexMatcher.find()) {
                 currentDuration = currentDuration - 1000;
-                nowPlayingTime = utils.milliSecondsToTimer(currentDuration).toString();
+                nowPlayingTime = utils.milliSecondsToTimer(currentDuration);
                 regex = Pattern.compile("(?s)<" + nowPlayingTime + ">\\s(.*)</" + nowPlayingTime + ">");
                 regexMatcher = regex.matcher(text);
             }
 //                while (regexMatcher.find()) {
             for (int i = 1; i <= regexMatcher.groupCount(); i++) {
                 String ls_pos = regexMatcher.group(i).replaceAll("\\n", "");
-                int a = Integer.valueOf(ls_pos.toString().trim());
+                int a = Integer.valueOf(ls_pos.trim());
+                if (PerPlayingItmPost!=a) {
+                    adapter.notifyItemChanged(PerPlayingItmPost);
+                    adapter.notifyItemChanged(a);
+                }
                 PerPlayingItmPost = PlayingItemPost;//چون هر 500 ثانیه بروز مشه این دوتا ممکنه یکی هم بشه
                 PlayingItemPost = a;
                 ((LinearLayoutManager) main_ls.getLayoutManager()).scrollToPositionWithOffset(a, 20);
-//                main_ls.getAdapter().notifyItemChanged(PerPlayingItmPost);
-//                main_ls.getAdapter().notifyItemChanged(PlayingItemPost);
 
             }
 //                }
@@ -162,20 +163,20 @@ public class Act_Main extends AppCompatActivity {
         else
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
-        CoordinatorLayout activity_main = (CoordinatorLayout) findViewById(R.id.activity_main);
+        CoordinatorLayout activity_main = findViewById(R.id.activity_main);
         boolean day = shpSettinh.getInt("theme", R.style.AppBaseTheme) == R.style.AppBaseTheme;
         activity_main.setBackgroundColor(day ? getResources().getColor(R.color.bg_d) : getResources().getColor(R.color.bg_n));
         ((ImageView) findViewById(R.id.shamse)).setColorFilter(day ? Color.BLACK : Color.WHITE);
 
 
-        main_ls = (RecyclerView) findViewById(R.id.main_list);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        main_ls = findViewById(R.id.main_list);
+        toolbar = findViewById(R.id.toolbar);
         font = Typeface.createFromAsset(getAssets(), "IRANSansMobile(FaNum).ttf");
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
         db = new DBAdapter(getBaseContext());
-        fab = (FloatingActionButton) findViewById(R.id.fab_play);
-        ll_fontSize = (FrameLayout) findViewById(R.id.ll_fontSize);
-        seekbar = (SeekBar) findViewById(R.id.font_size);
+        fab = findViewById(R.id.fab_play);
+        ll_fontSize = findViewById(R.id.ll_fontSize);
+        seekbar = findViewById(R.id.font_size);
         utils = new Utilities();
         mp = new MediaPlayer();
         //
@@ -184,32 +185,27 @@ public class Act_Main extends AppCompatActivity {
         main_ls.setVerticalScrollbarPosition(View.SCROLLBAR_POSITION_LEFT);
         db.open();
         doa_itm = db.getAllItem();
+        db.close();
         if (doa_itm.size() == 0) {
             try {
-                String destPath = "/data/data/" + getPackageName() + "/databases";
-                CopyDB(getAssets().open("db_doaahd"), new FileOutputStream(destPath + "/db_doaahd"));
+                copyDataBase();
                 Log.i("esfandune", "database copy shod");
+                db.open();
                 doa_itm = db.getAllItem();
+                db.close();
                 refreshDisplay();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }// end if
         else {
             refreshDisplay();
         }
-        try {
-            AssetFileDescriptor afd = getAssets().openFd("AudioFile.mp3");
-            mp.setDataSource(afd.getFileDescriptor());
-            mp.prepare();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        mp = MediaPlayer.create(getApplicationContext(), R.raw.audiofile);
+
 
         NavigationList();
-        TextView toolbarTitle = (TextView) findViewById(R.id.toolbarTitle);
+        TextView toolbarTitle = findViewById(R.id.toolbarTitle);
         toolbarTitle.setTypeface(font);
 
 
@@ -221,12 +217,12 @@ public class Act_Main extends AppCompatActivity {
     }
 
     private void initMusicBar() {
-        musicPrgbar = (SeekBar) findViewById(R.id.musicPrgbar);
-        totalTime = (TextView) findViewById(R.id.totalTime);
-        currentTime = (TextView) findViewById(R.id.currentTime);
+        musicPrgbar = findViewById(R.id.musicPrgbar);
+        totalTime = findViewById(R.id.totalTime);
+        currentTime = findViewById(R.id.currentTime);
         totalTime.setTypeface(font);
         currentTime.setTypeface(font);
-        rl_musicBar = (RelativeLayout) findViewById(R.id.rl_musicBar);
+        rl_musicBar = findViewById(R.id.rl_musicBar);
         rl_musicBar.setVisibility(View.GONE);
         musicPrgbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
@@ -268,7 +264,7 @@ public class Act_Main extends AppCompatActivity {
     }
 
     public void NavigationList() {
-        list_drawer = (ListView) findViewById(R.id.list_drawer);
+        list_drawer = findViewById(R.id.list_drawer);
         LayoutInflater inflater = getLayoutInflater();
         //header
         View m_headerView = inflater.inflate(R.layout.mk_header, list_drawer, false);
@@ -289,12 +285,12 @@ public class Act_Main extends AppCompatActivity {
         });
         final SharedPreferences sh = Act_Main.this.getSharedPreferences("setting", 0);
 
-        final TextView mk_ftr_txt = (TextView) m_headerView.findViewById(R.id.mk_ftr_txt);
+        final TextView mk_ftr_txt = m_headerView.findViewById(R.id.mk_ftr_txt);
         Typeface broya = Typeface.createFromAsset(Act_Main.this.getAssets(), "BROYA_rg.TTF");
         mk_ftr_txt.setTypeface(broya);
         mk_ftr_txt.setText(sh.getInt("count", 0) + "");
 
-        ImageView mk_ftr_plus = (ImageView) m_headerView.findViewById(R.id.mk_ftr_plus);
+        ImageView mk_ftr_plus = m_headerView.findViewById(R.id.mk_ftr_plus);
         mk_ftr_plus.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -304,11 +300,11 @@ public class Act_Main extends AppCompatActivity {
 
                 SharedPreferences.Editor sh_et = sh.edit();
                 sh_et.putInt("count", size);
-                sh_et.commit();
+                sh_et.apply();
 
             }
         });
-        ImageView mk_ftr_mi = (ImageView) m_headerView.findViewById(R.id.mk_ftr_mi);
+        ImageView mk_ftr_mi = m_headerView.findViewById(R.id.mk_ftr_mi);
         mk_ftr_mi.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -318,7 +314,7 @@ public class Act_Main extends AppCompatActivity {
                     mk_ftr_txt.setText(size + "");
                     SharedPreferences.Editor sh_et = sh.edit();
                     sh_et.putInt("count", size);
-                    sh_et.commit();
+                    sh_et.apply();
                 }
             }
         });
@@ -384,9 +380,9 @@ public class Act_Main extends AppCompatActivity {
                 break;
             case 2:
                 if (sh.getString("font_type", "IRANSansMobile(FaNum).ttf").equalsIgnoreCase("a-JannatLT-Regular.ttf")) {
-                    sh_et.putString("font_type", "IRANSansMobile(FaNum).ttf").commit();
+                    sh_et.putString("font_type", "IRANSansMobile(FaNum).ttf").apply();
                 } else {
-                    sh_et.putString("font_type", "a-JannatLT-Regular.ttf").commit();
+                    sh_et.putString("font_type", "a-JannatLT-Regular.ttf").apply();
                 }
                 refreshDisplay();
                 break;
@@ -403,7 +399,7 @@ public class Act_Main extends AppCompatActivity {
                 new AlertDialog.Builder(this).setPositiveButton("اجرای مجدد", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        sh_et.putInt("theme", style).commit();
+                        sh_et.putInt("theme", style).apply();
                         Intent mStartActivity = new Intent(Act_Main.this, Act_Main.class);
                         int mPendingIntentId = 123456;
                         PendingIntent mPendingIntent = PendingIntent.getActivity(Act_Main.this, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
@@ -417,10 +413,10 @@ public class Act_Main extends AppCompatActivity {
             case 4:
                 if (shpSettinh.getBoolean("keepOnScreen", true)) {
                     getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-                    shpSettinh.edit().putBoolean("keepOnScreen", false).commit();
+                    shpSettinh.edit().putBoolean("keepOnScreen", false).apply();
                 }else {
                     getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-                    shpSettinh.edit().putBoolean("keepOnScreen", true).commit();
+                    shpSettinh.edit().putBoolean("keepOnScreen", true).apply();
                 }
 
                 rfrshNavListAdapter();
@@ -433,15 +429,24 @@ public class Act_Main extends AppCompatActivity {
 
     }
 
-    public void CopyDB(InputStream inputStream, OutputStream outputStream) throws IOException {
-        // ---copy 1K bytes at a time---
+
+    private void copyDataBase() throws IOException {
+        // Open your local db as the input stream
+        InputStream myInput = getAssets().open(DBAdapter.DATABASE_NAME);
+        // Path to the just created empty db
+        File outFileName = getDatabasePath(DBAdapter.DATABASE_NAME);
+        // Open the empty db as the output stream
+        OutputStream myOutput = new FileOutputStream(outFileName);
+        // transfer bytes from the inputfile to the outputfile
         byte[] buffer = new byte[1024];
         int length;
-        while ((length = inputStream.read(buffer)) > 0) {
-            outputStream.write(buffer, 0, length);
+        while ((length = myInput.read(buffer)) > 0) {
+            myOutput.write(buffer, 0, length);
         }
-        inputStream.close();
-        outputStream.close();
+        // Close the streams
+        myOutput.flush();
+        myOutput.close();
+        myInput.close();
     }
 
     public void onFabClick(View v) {
@@ -527,11 +532,11 @@ public class Act_Main extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.activity_about, null, false);
 
-        TextView abt_txt = (TextView) view.findViewById(R.id.abt_txt);
+        TextView abt_txt = view.findViewById(R.id.abt_txt);
         abt_txt.setTypeface(font);
-        abt_txt = (TextView) view.findViewById(R.id.abt_title);
+        abt_txt = view.findViewById(R.id.abt_title);
         abt_txt.setTypeface(font);
-        ImageView img_abt = (ImageView) view.findViewById(R.id.abt_abt);
+        ImageView img_abt = view.findViewById(R.id.abt_abt);
         img_abt.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -573,7 +578,7 @@ public class Act_Main extends AppCompatActivity {
 
             }
         });
-        seekbar.setProgress(shpSettinh.getInt("font_size", 18));
+        seekbar.setProgress(shpSettinh.getInt("font_size", 12));
         if (ll_fontSize.getVisibility() == View.GONE) {
             ll_fontSize.setVisibility(View.VISIBLE);
             seekbar.animate().alpha(1).setDuration(300).setListener(null).start();

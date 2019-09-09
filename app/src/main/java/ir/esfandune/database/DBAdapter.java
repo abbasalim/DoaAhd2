@@ -15,21 +15,19 @@ import java.util.List;
 public class DBAdapter {
 
 
-    public static final String DATABASE_MAINTABLE = "main";
+    public  final String DATABASE_MAINTABLE = "main";
     public static final String DATABASE_NAME = "db_doaahd";
-    public static final String KEY_ARABI = "arabi";
-    public static final String KEY_EZAFI = "extera";
-    public static final String KEY_FARSI = "farsi";
-    public static final String KEY_ROWID = "id";
-    public static final String TAG = "DBAdapter";
-    static final String CREATE_MAINTABLE = "create table main(id INTEGER PRIMARY KEY  NOT NULL, arabi text ,farsi text ,extera text);";
-    static final int DATABASE_VERSION = 5;
-    final Context context;
-    DatabaseHelper DBHelper;
-    SQLiteDatabase db;
-    String yek_nam[] = {
-            KEY_ROWID, KEY_ARABI, KEY_FARSI, KEY_EZAFI
-    };
+    public  final String KEY_ARABI = "arabi";
+    public  final String KEY_EZAFI = "extera";
+    public  final String KEY_FARSI = "farsi";
+    public  final String KEY_ROWID = "id";
+    public  final String TAG = "DBAdapter";
+    private  final String CREATE_MAINTABLE = "create table main(id INTEGER PRIMARY KEY  NOT NULL, arabi text ,farsi text ,extera text);";
+    private final int DATABASE_VERSION = 5;
+    private final Context context;
+    private DatabaseHelper DBHelper;
+    private SQLiteDatabase db;
+    private String yek_nam[] = {  KEY_ROWID, KEY_ARABI, KEY_FARSI, KEY_EZAFI  };
 
 
 
@@ -58,7 +56,7 @@ public class DBAdapter {
     public long insertSH_SUB(Doa doa)
     {
         ContentValues initialValues = new ContentValues();
-        initialValues.put(KEY_ROWID, Integer.valueOf(doa.getId()));
+//        initialValues.put(KEY_ROWID, doa.getId());
         initialValues.put(KEY_ARABI, doa.getarabi());
         initialValues.put(KEY_FARSI, doa.getfarsi());
         initialValues.put(KEY_EZAFI, doa.getezafi());
@@ -70,7 +68,6 @@ public class DBAdapter {
     //---retrieves all the contacts---
     public  List<Doa> getAllItem()
     {
-
         Cursor cursor = db.query(DATABASE_MAINTABLE, yek_nam, null, null, null, null, null);
         List<Doa> nams = cursorToList_Doa(cursor);
         cursor.close();
@@ -99,7 +96,7 @@ public class DBAdapter {
     }
     /////////////////////
 
-    private static class DatabaseHelper extends SQLiteOpenHelper {
+    private  class DatabaseHelper extends SQLiteOpenHelper {
         DatabaseHelper(Context context) {
             super(context, DATABASE_NAME, null, DATABASE_VERSION);
         }
@@ -108,6 +105,7 @@ public class DBAdapter {
         public void onCreate(SQLiteDatabase db) {
             try {
                 db.execSQL(CREATE_MAINTABLE);
+//                db.execSQL("INSERT INTO main (arabi,farsi) VALUES ('خطا در کپی دیتابیس','خطا در کپی دیتابیس');");
 
             } catch (SQLException e) {
                 e.printStackTrace();

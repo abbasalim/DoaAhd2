@@ -1,0 +1,4 @@
+#Sun Nov 17 16:08:49 IRST 2019
+base.0=/home/abbasalim/Public/work/DoaAhd2/app/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

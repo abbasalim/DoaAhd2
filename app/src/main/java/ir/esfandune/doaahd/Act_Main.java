@@ -388,7 +388,7 @@ public class Act_Main extends AppCompatActivity {
                 break;
             case 3:
                 String Mode;
-                final int style;
+                int style;
                 if (sh.getInt("theme", R.style.AppBaseTheme) == R.style.AppBaseTheme) {
                     style = R.style.AppBaseTheme_night;
                     Mode = "شب";
@@ -396,10 +396,10 @@ public class Act_Main extends AppCompatActivity {
                     style = R.style.AppBaseTheme;
                     Mode = "روز";
                 }
+                sh_et.putInt("theme", style).apply();
                 new AlertDialog.Builder(this).setPositiveButton("اجرای مجدد", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        sh_et.putInt("theme", style).apply();
                         Intent mStartActivity = new Intent(Act_Main.this, Act_Main.class);
                         int mPendingIntentId = 123456;
                         PendingIntent mPendingIntent = PendingIntent.getActivity(Act_Main.this, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);

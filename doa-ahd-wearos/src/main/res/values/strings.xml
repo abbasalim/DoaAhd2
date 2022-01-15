@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">دعا عهد</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_about">درباره</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="abt_txt">یک روز در مسجد گوهر شاد بودم، جوانی که نورانی هم بود، از من پرسید،‌گاهی آهن زنگ می زند و یا پارچه ای کثیف و روغنی می‌شود. با وسیله ای زنگار و کثیفی آن‌ها را از بین می‌برند،‌آیا شما وسیله ای دارید که زنگار دل را از بین ببرد؟
+ \n
+من از شنیدن این سوال لذت بردم! این جوانی که این سوال را می کند از پیر دومردان نیز با ارزش تر است.
+ \n
+به او گفتم: دو تا دوا به یاد دارم، که در روایات ذکر شده است. یکی خواندن قرآن در هنگام سحر، خواندن قرآن را هنگام سحر فراموش نکنید. وقتی نماز شب را خواندید قدری قرآن بخوانید. 
+ \n
+دوم استغفار در هنگام سحر است که در رفع زنگار دل بسیار موثر است.
+\n 
+البته مورد سومی نیز وجود دارد که موجب می‌شود زنگار دل از بین برود و آن دست کشیدن بر سر یتیم است، البته نباید دست خشک و خالی باشد،‌اگر وضع مالی شما خوب است به امور زندگی او برسد و وسایل مدرسه،‌کیف، لباس، و.. او را فراهم کنید. نیاز های زندگی او را برطرف کنید که در پاک کردن زنگار دل بسیار موثر است.
+\n\n
+منبع : رسم دعا کردن از نگاه آیت‌الله مجتهدی تهرانی سایت فرهنگ نیوز
+\n
+</string>
+    <string name="title_activity_splash">Splash</string>
+    <string name="title_activity_act__main">Act_Main</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+
+</resources>

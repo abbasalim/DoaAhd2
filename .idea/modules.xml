@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DoaAhd2.iml" filepath="$PROJECT_DIR$/DoaAhd2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/FABlibrary/FABlibrary.iml" filepath="$PROJECT_DIR$/FABlibrary/FABlibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DoaAhd2.iml" filepath="$PROJECT_DIR$/.idea/modules/DoaAhd2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FABlibrary/DoaAhd2.FABlibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/FABlibrary/DoaAhd2.FABlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/DoaAhd2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/DoaAhd2.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/doa-ahd-wearos/DoaAhd2.doa-ahd-wearos.iml" filepath="$PROJECT_DIR$/.idea/modules/doa-ahd-wearos/DoaAhd2.doa-ahd-wearos.iml" />
     </modules>
   </component>
 </project>

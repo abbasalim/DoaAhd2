@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/abbasalim/Public/work/DoaAhd2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "C:\\Users\\abbasalim\\StudioProjects\\DoaAhd2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "/home/abbasalim/.gradle/caches/transforms-2/files-2.1/d280ec5d1eac08885b834bf6ffaad6a0/cardview-v7-28.0.0/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\abbasalim\\.gradle\\caches\\transforms-2\\files-2.1\\d280ec5d1eac08885b834bf6ffaad6a0\\cardview-v7-28.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/abbasalim/.gradle/caches/transforms-2/files-2.1/8516ac599c0f39cda6e75249f41fc5c3/appcompat-v7-28.0.0/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\abbasalim\\.gradle\\caches\\transforms-2\\files-2.1\\8516ac599c0f39cda6e75249f41fc5c3\\appcompat-v7-28.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

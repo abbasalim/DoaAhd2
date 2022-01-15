@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.wear.widget.WearableRecyclerView
+        android:id="@+id/main_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/vg_controller"
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="7dp"
+        app:circular_scrolling_gesture_enabled="true" />
+
+
+    <androidx.appcompat.widget.AppCompatSeekBar
+        android:id="@+id/musicPrgbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/vg_controller"
+        android:layout_marginBottom="-10dp"
+        android:translationZ="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/vg_controller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorprimarydark_night"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/currentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="2dp"
+            android:layout_toLeftOf="@+id/fab_play"
+            android:text="00:00"
+            android:textColor="@color/white" />
+
+        <ImageView
+            android:id="@+id/fab_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:contentDescription="play/pause"
+            android:onClick="onFabClick"
+            android:padding="5dp"
+            android:src="@drawable/ic_round_play_arrow_24"
+            app:tint="@color/accent_night" />
+
+        <TextView
+            android:id="@+id/totalTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="2dp"
+            android:layout_toRightOf="@+id/fab_play"
+            android:text="00:00"
+            android:textColor="@color/white" />
+
+    </RelativeLayout>
+
+
+    <!-- <androidx.wear.widget.BoxInsetLayout
+         android:id="@+id/box_controller"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="#DA000000"
+         android:onClick="onNothing"
+         android:visibility="gone">
+
+         <RelativeLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent">
+
+             <me.tankery.lib.circularseekbar.CircularSeekBar
+                 android:id="@+id/musicPrgbar"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 app:cs_circle_stroke_width="15dp"
+                 app:cs_pointer_halo_width="20dp"
+                 app:cs_pointer_stroke_width="15dp"
+                 app:cs_progress="0" />
+
+             <TextView
+                 android:id="@+id/currentTime"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerVertical="true"
+                 android:layout_marginLeft="2dp"
+                 android:layout_toLeftOf="@+id/fab_play"
+
+                 android:text="00:00"
+                 android:textColor="@color/white" />
+
+             <com.google.android.material.floatingactionbutton.FloatingActionButton
+                 android:id="@+id/fab_play"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerInParent="true"
+                 android:contentDescription="play/pause"
+                 android:onClick="onFabClick"
+                 android:src="@drawable/ic_round_play_arrow_24" />
+
+             <TextView
+                 android:id="@+id/totalTime"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerVertical="true"
+                 android:layout_marginRight="2dp"
+                 android:layout_toRightOf="@+id/fab_play"
+                 android:text="00:00"
+                 android:textColor="@color/white" />
+
+             <ImageView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_below="@id/fab_play"
+                 android:layout_centerHorizontal="true"
+                 android:layout_gravity="center"
+                 android:layout_marginTop="5dp"
+                 android:onClick="onHideController"
+                 android:padding="4dp"
+                 android:src="@drawable/ic_round_arrow_back_24" />
+         </RelativeLayout>
+     </androidx.wear.widget.BoxInsetLayout>-->
+</RelativeLayout>

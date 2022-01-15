@@ -1,4 +1,4 @@
-#Sun Nov 17 16:07:59 IRST 2019
-base.0=/home/abbasalim/Public/work/DoaAhd2/app/build/intermediates/dex/debug/mergeDexDebug/out/classes.dex
+#Sat Jan 15 20:07:10 IRST 2022
+base.0=C\:\\Users\\abbasalim\\StudioProjects\\DoaAhd2\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

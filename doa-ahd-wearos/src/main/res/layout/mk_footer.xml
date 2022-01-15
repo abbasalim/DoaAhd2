@@ -1,0 +1,38 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/mk_ftr_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:shadowColor="#000"
+        android:padding="5dp"
+        android:shadowDx="4"
+        android:shadowDy="4"
+        android:shadowRadius="10"
+        android:text="0"
+        android:textColor="#fff"
+        android:textSize="50dp" />
+
+    <ImageView
+        android:id="@+id/mk_ftr_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/mk_ftr_txt"
+        android:layout_alignTop="@+id/mk_ftr_txt"
+        android:layout_toRightOf="@+id/mk_ftr_txt"
+        android:src="@drawable/mk_ftr_plus" />
+
+    <ImageView
+        android:id="@+id/mk_ftr_mi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/mk_ftr_txt"
+        android:layout_alignTop="@+id/mk_ftr_txt"
+        android:layout_toLeftOf="@+id/mk_ftr_txt"
+        android:src="@drawable/mk_ftr_m" />
+
+</RelativeLayout>

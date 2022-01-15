@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/abbasalim/Public/work/DoaAhd2/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "outputFile": "C:\\Users\\abbasalim\\StudioProjects\\DoaAhd2\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "/home/abbasalim/.gradle/caches/transforms-2/files-2.1/ccf94a4f227dfa4f17156620e28a8b98/support-compat-28.0.0/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\abbasalim\\.gradle\\caches\\transforms-2\\files-2.1\\ccf94a4f227dfa4f17156620e28a8b98\\support-compat-28.0.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/home/abbasalim/.gradle/caches/transforms-2/files-2.1/8516ac599c0f39cda6e75249f41fc5c3/appcompat-v7-28.0.0/res/values-v16/values-v16.xml",
+                    "source": "C:\\Users\\abbasalim\\.gradle\\caches\\transforms-2\\files-2.1\\8516ac599c0f39cda6e75249f41fc5c3\\appcompat-v7-28.0.0\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

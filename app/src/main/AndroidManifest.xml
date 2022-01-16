@@ -17,6 +17,7 @@
         android:theme="@style/AppBaseTheme" >
 
         <activity
+            android:exported="true"
             android:name=".Splash"
             android:label="@string/app_name"
             android:theme="@style/Theme.Transparent" >
@@ -27,6 +28,7 @@
             </intent-filter>
         </activity>
         <activity
+            android:exported="true"
             android:name=".Act_Main"
             android:label="@string/app_name" >
         </activity>

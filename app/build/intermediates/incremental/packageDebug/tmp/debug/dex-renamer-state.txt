@@ -1,4 +1,4 @@
-#Sat Jan 15 20:07:10 IRST 2022
-base.0=C\:\\Users\\abbasalim\\StudioProjects\\DoaAhd2\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-path.0=classes.dex
+#Sun Jan 16 10:01:41 IRST 2022
+base.0=C\:\\Users\\abbasalim\\StudioProjects\\DoaAhd2\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 renamed.0=classes.dex
+path.0=classes.dex

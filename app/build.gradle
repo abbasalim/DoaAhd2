@@ -1,18 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion '28.0.3'
+    compileSdkVersion 31
+    buildToolsVersion '31.0.0'
 
 
     defaultConfig {
         applicationId "ir.esfandune.doaahd"
         minSdkVersion 14
-        targetSdkVersion 28
+        targetSdkVersion 31
 
 
-        versionCode 12
-        versionName "5.0.1"
+        versionCode 13
+        versionName "6.0.0"
     }
 
     buildTypes {
@@ -29,10 +29,10 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.0.0'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.legacy:legacy-support-v13:1.0.0'
     implementation project(':FABlibrary')
